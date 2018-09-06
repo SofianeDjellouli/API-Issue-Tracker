@@ -21,10 +21,13 @@ module.exports = function (app) {
     
       .get(function (req, res){
         var project = req.params.project;
+//       treats the _id to be readable by the database
         req.query._id? req.query._id=ObjectId(req.query._id) : null
+//       evaluate the open string
         req.query.open? req.query.open=eval(req.query.open) : null       
         db.collection(project).find(req.query).toArray((err,doc)=>{
           if (err) res.send(err);
+//           from latest to oldest
           else res.send(doc.reverse())
         })    
       })      
@@ -52,6 +55,7 @@ module.exports = function (app) {
       .put(function (req, res){
         var project = req.params.project;
         var _id=req.body._id
+//         we modify the req.body object so it can be used to query the database
         for (let x in req.body){
           if (req.body[x]===''){
             delete req.body[x]
