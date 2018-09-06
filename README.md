@@ -1,4 +1,4 @@
-# FreeCodeCamp - Issue Tracker
+# API Issue Tracker
 ## Stack
 * Node
 * Express
