@@ -39,13 +39,6 @@ fccTestingRoutes(app);
 
 //Routing for API 
 apiRoutes(app);  
-    
-//404 Not Found Middleware
-// app.use(function(req, res, next) {
-//   res.status(404)
-//     .type('text')
-//     .send('Not Found');
-// });
 
 //Start our server and tests!
 app.listen(process.env.PORT || 3000, function () {
@@ -63,7 +56,5 @@ app.listen(process.env.PORT || 3000, function () {
     }, 3500);
   }
 });
-
-
 
 module.exports = app; //for testing
