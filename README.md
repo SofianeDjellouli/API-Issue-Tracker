@@ -1,4 +1,4 @@
-# API Issue Tracker
+# Issue Tracker API
 ## Stack
 * Node
 * Express
